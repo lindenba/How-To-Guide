@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title> jQuery 1</title>
+  <meta name="description" content="What goes here not sure">
+
+      <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script type="text/Javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+      <!-- Optional theme -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+<style type="text/css">
+  .header{
+    margin:20px;
+  }
+  .body{
+    margin:20px;
+  }
+  .code{
+    background:hsl(220,80%,90%);
+  };
+  .pre{
+    white-space:pre-wrap;
+    background:hsl(30,80%,90%);
+}
+.body{
+  font-size:18px;
+  line-height:1.5;
+  margin-right: 5%;
+}
+.menu{
+  float:right;
+  padding:25px;
+  display: inline-block;
+}
+
+  </style>
+
+</head>
+
+<body>
+
+    <div class="header">
+      <div class="page-header">
+        <h1>Let's begin with some Effects in jQuery<small></small><h1>
+    </div>
+  </div>
+  <div class ="container">
+  <div class="body-header">
+  </div>
+</div>
+<div class='menu'>
+  <ul>
+    <li class="active"><a href="how-to.html"><span>Home</span></a></li>
+    <li><a href="how1.html">Effects</a></li>
+    <li><a href="how2.html">Selectors</a></li>
+    <li><a href="how3.html">Fake API</a></li>
+    <li class='last'><a href="how4.html"><span>AJAX</span></a></li>
+  </ul>
+</div>
+<div class="row">
+    <div class="col-sm-8 blog-main">
+      <div class="body">
+        <p>The category Effects provides animation to the web page.  Simple basic effects are hide, show, and toggle.  Hide and show methods are
+          pretty obvious.  Hide hides the element indicated and show shows the element indicated. Toggle is pretty neat in that whatever
+          selector is called will fade away.  This can be done fast or slow.
+          Walking through the test code below 'p' is the selector '.show/hide/toggle' is the method and the parentheses is where you put your argument. So for
+          toggle I put slow inside the parathesis.  I wanted 'item 3' to slowly disappear after the webpage loads.  You can also see that I gave the first 3 'p' elements
+          either a class or an id so to be able to show, hide, and toggle.  Similar to CSS a class gets a period when called and a pound sign is used for an id.  </p>
+        <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">$(document).ready(<span style="color: #000080; font-weight: bold">function</span>()
+    {
+      $(<span style="color: #0000FF">&#39;p.a&#39;</span>).show();
+      $(<span style="color: #0000FF">&#39;p#b&#39;</span>).hide();
+      $(<span style="color: #0000FF">&#39;p#c&#39;</span>).toggle(<span style="color: #0000FF">&#39;slow&#39;</span>);
+
+    });
+    &lt;<span style="color: #a61717; background-color: #e3d2d2">/script&gt;</span>
+    &lt;p <span style="color: #000080; font-weight: bold">class</span>=<span style="color: #0000FF">&quot;a&quot;</span>&gt;item <span style="color: #0000FF">1</span>&lt;<span style="color: #a61717; background-color: #e3d2d2">/p&gt;</span>
+    &lt;p id=<span style="color: #0000FF">&quot;b&quot;</span>&gt;item <span style="color: #0000FF">2</span>&lt;<span style="color: #a61717; background-color: #e3d2d2">/p&gt;</span>
+    &lt;p id=<span style="color: #0000FF">&quot;c&quot;</span>&gt;item <span style="color: #0000FF">3</span>&lt;<span style="color: #a61717; background-color: #e3d2d2">/p&gt;</span>
+    &lt;p&gt;item <span style="color: #0000FF">4</span>&lt;<span style="color: #a61717; background-color: #e3d2d2">/p&gt;</span>
+    &lt;p&gt;item <span style="color: #0000FF">5</span>&lt;<span style="color: #a61717; background-color: #e3d2d2">/p&gt;</span>
+    &lt;p&gt;item <span style="color: #0000FF">6</span>&lt;<span style="color: #a61717; background-color: #e3d2d2">/p&gt;</span>
+    </pre></div>
+<script>
+    $(document).ready(function()
+        {
+          $('p.a').show();
+          $('p#b').hide();
+          $('p#c').toggle('slow');
+
+        });
+        </script>
+        <p class="a">item 1</p>
+        <p id="b">item 2</p>
+        <p id="c">item 3</p>
+        <p>item 4</p>
+        <p>item 5</p>
+        <p>item 6</p>
+    <p>Another example that I find to be very interesting is the .animate() method.  The animate method is a custom method which performs a set of CSS properites.
+    The code below is a circle moving from the right of the screen.  If you look at the code closely outside of the jQuery function I defined the circle with a radius of 200px. However
+    in the jQuery code I made the circle radius having a radius of 60px.  When this runs the circle looks like it is flying out of the screen onto the webpage
+    because of the effect from large to small and moving right. Looks a little trippy.</p>
+    <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">&lt;script type=<span style="color: #0000FF">&quot;text/Javascript&quot;</span>&gt;
+$(document).ready(<span style="color: #000080; font-weight: bold">function</span>()
+{
+  $(<span style="color: #0000FF">&quot;button&quot;</span>).ready(<span style="color: #000080; font-weight: bold">function</span>()
+  {
+    $(<span style="color: #0000FF">&quot;div&quot;</span>).animate({right: <span style="color: #0000FF">&#39;800px&#39;</span>, height:<span style="color: #0000FF">&#39;120px&#39;</span>, width:<span style="color: #0000FF">&#39;120px&#39;</span>, opacity:<span style="color: #0000FF">&#39;.4&#39;</span>, borderRadius:<span style="color: #0000FF">&#39;60px&#39;</span>});
+  });
+
+});
+&lt;<span style="color: #a61717; background-color: #e3d2d2">/script&gt;</span>
+&lt;div style=<span style="color: #0000FF">&quot;background: green; height:400px; width:400px; position: absolute; border-radius:200px&quot;</span>&gt;
+    &lt;h3 style=<span style="color: #0000FF">&quot;padding-left:40px&quot;</span>&gt;Watch!&lt;<span style="color: #a61717; background-color: #e3d2d2">/h3&gt;</span>
+&lt;<span style="color: #a61717; background-color: #e3d2d2">/div&gt;</span>
+</pre></div>
+<script>
+    $(document).ready(function()
+        {
+            $("div#circle").animate({right: '800px', height:'120px', width:'120px', opacity:'.4', borderRadius:'60px'});
+        });
+        </script>
+        <div id="circle" style="background: green; height:400px; width:400px; position: absolute; border-radius:200px">
+        </div>
+<br>
+    <p>Before moving onto the next tutorial.  I wanted to state that these methods are small programs which have been compiled. JQuery uses these small programs to run code.  There are tons
+    of them.  You can check them out by going to <a href="http://jquery.com/">jQuery.com</a></p>
+      </div>
+
+
+
+      <nav>
+        <ul class="pager">
+          <li><a href="how-to.html">Prev</a></li>
+          <li><a href="how2.html">Next</a></li>
+        </ul>
+      </nav>
+    </div>
+    </div>
+
+
+
+
+
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+
+
+</body>
+</html>

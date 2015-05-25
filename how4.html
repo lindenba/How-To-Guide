@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title> How to guide for JQuery</title>
+  <meta name="description" content="What goes here not sure">
+
+      <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script type="text/Javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+      <!-- Optional theme -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+      <style type="text/css">
+      .header{
+      margin:20px;
+      }
+      .body{
+      margin:20px;
+      }
+      .code{
+      background:hsl(220,80%,90%);
+      };
+      .pre{
+      white-space:pre-wrap;
+      background:hsl(30,80%,90%);
+      }
+      .body{
+      font-size:18px;
+      line-height:1.5;
+      margin-right: 5%;
+      }
+      .menu{
+      float:right;
+      padding:25px;
+      display: inline-block;
+      }
+
+      </style>
+
+
+</head>
+
+<body>
+
+    <div class="header">
+      <div clss="page-header">
+        <h1>AJAX with jQuery<h1>
+    </div>
+  </div>
+  <div class ="container">
+  <div class="body-header">
+  </div>
+  </div>
+  <div class='menu'>
+  <ul>
+    <li class="active"><a href="how-to.html"><span>Home</span></a></li>
+    <li><a href="how1.html">Effects</a></li>
+    <li><a href="how2.html">Selectors</a></li>
+    <li><a href="how3.html">Fake API</a></li>
+    <li class='last'><a href="how4.html"><span>AJAX</span></a></li>
+  </ul>
+  </div>
+  <div class="row">
+  <div class="col-sm-8 blog-main">
+    <div class="body">
+        <p>This last bit I'll go over an AJAX call using a post. AJAX stands for Asynchronous Javascript and Xml.
+        This request from the website can send data to and retrieve from a server in the background.  This happens
+        without interfering with the page and what is already displayed. </p>
+
+        <p>What I am going to do is show a Post request to the server that will return the information inputted. First I
+           define a text input box and a submit button. Which I do within the body part of the HTML. </p>
+
+        <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">&lt;body&gt;
+&lt;h4&gt;AJAX &lt;<span style="color: #a61717; background-color: #e3d2d2">/h4&gt;</span>
+&lt;div <span style="color: #000080; font-weight: bold">class</span>=<span style="color: #0000FF">&quot;entry-wrapper&quot;</span>&gt;
+  &lt;input type=<span style="color: #0000FF">&quot;text&quot;</span> size=<span style="color: #0000FF">&quot;30&quot;</span> id=<span style="color: #0000FF">&quot;input&quot;</span>/&gt;
+  &lt;input type=<span style="color: #0000FF">&quot;button&quot;</span> value=<span style="color: #0000FF">&quot;submit&quot;</span> id=<span style="color: #0000FF">&quot;button&quot;</span>/&gt;
+&lt;<span style="color: #a61717; background-color: #e3d2d2">/div&gt;</span>
+&lt;div <span style="color: #000080; font-weight: bold">class</span>=<span style="color: #0000FF">&quot;response&quot;</span>&gt;
+  &lt;textarea rows=<span style="color: #0000FF">&quot;5&quot;</span> cols=<span style="color: #0000FF">&quot;30&quot;</span> id=<span style="color: #0000FF">&quot;responsetext&quot;</span>&gt;&lt;<span style="color: #a61717; background-color: #e3d2d2">/textarea&gt;</span>
+&lt;<span style="color: #a61717; background-color: #e3d2d2">/div&gt;</span>
+&lt;<span style="color: #a61717; background-color: #e3d2d2">/body&gt;</span>
+</pre></div>
+
+  <p>Next I make my document request jQuery. Where I define the button element to be useable.  Within this function
+  make the request to the server using .post request.  I am using for my url a predefined .php which will hold the request and then echo back
+  what is typed in.</p>
+  <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">$(document).ready(<span style="color: #000080; font-weight: bold">function</span>()
+{
+  $(<span style="color: #0000FF">&#39;#button&#39;</span>).click(<span style="color: #000080; font-weight: bold">function</span>(){
+    $.post(<span style="color: #0000FF">&quot;ajax.php&quot;</span>,
+
+    {
+      dog_type:$(<span style="color: #0000FF">&#39;#input&#39;</span>).val()
+    },
+
+    <span style="color: #000080; font-weight: bold">function</span>(data)
+    {
+      $(<span style="color: #0000FF">&#39;#responsetext&#39;</span>).val(data);
+    });
+  });
+
+});
+</pre></div>
+
+  <p>This code is what goes into the .php file.</p>
+
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">&lt;?php
+
+$dog_type=$_POST[<span style="color: #0000FF">&#39;dog_type&#39;</span>];
+
+echo<span style="color: #0000FF">&quot;$dog_type is a type of dog&quot;</span>;
+
+?&gt;
+</pre></div>
+  <p>All together the code will output something like this.  Where you can input a word and something will return.
+  I set it up that if you type in a type of dog the response will be " is a type of dog".</p>
+<script type="text/Javascript">
+$(document).ready(function()
+{
+  $('#button').click(function(){
+    $.post("ajax.php",
+
+    {
+      dog_type:$('#input').val()
+    },
+
+    function(data)
+    {
+      $('#responsetext').val(data);
+    });
+  });
+
+});
+
+</script>
+<body>
+<h4>AJAX </h4>
+<div class="entry-wrapper">
+  <input type="text" size="30" id="input"/>
+  <input type="button" value="submit" id="button"/>
+</div>
+<div class="response">
+  <textarea rows="5" cols="30" id="responsetext"></textarea>
+</div>
+
+
+      </div>
+    <nav>
+      <ul class="pager">
+        <li><a href="how3.html">Prev</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  </div>
+
+
+
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+</body>
+</html>

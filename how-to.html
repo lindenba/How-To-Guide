@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title> How to guide for jQuery</title>
+  <meta name="description" content="What goes here not sure">
+
+      <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+      <!-- Optional theme -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+<style type="text/css">
+  .header{
+    margin:20px;
+  }
+  .body{
+    margin:20px;
+  }
+  .code{
+    background:hsl(220,80%,90%);
+  };
+  .pre{
+    white-space:pre-wrap;
+    background:hsl(30,80%,90%);
+}
+.body{
+  font-size:18px;
+  line-height:1.5;
+  margin-right: 5%;
+}
+.menu{
+  float:right;
+  padding:25px;
+  display: inline-block;
+}
+
+  </style>
+
+</head>
+
+<body>
+
+    <div class="header">
+      <div class="page-header">
+        <h1>How to guide for JQuery<small> by Anne Lindenberg</small><h1>
+    </div>
+  </div>
+  <div class ="container">
+  <div class="body-header">
+    <p class="text-left"><h3>Introduction</h3></p>
+  </div>
+</div>
+<div class='menu'>
+  <ul>
+    <li class="active"><a href="how-to.html"><span>Home</span></a></li>
+    <li><a href="how1.html">Effects</a></li>
+    <li><a href="how2.html">Selectors</a></li>
+    <li><a href="how3.html">Fake API</a></li>
+    <li class='last'><a href="how4.html"><span>AJAX</span></a></li>
+</div>
+<div class="row">
+    <div class="col-sm-8 blog-main">
+      <div class="body">
+        <p>This is my how to guide on jQuery.  I am pretty new to web development and mostly
+        been plugging away at HTML, Css, JavaScript, and PHP.  All these different names
+        for web development can get a little confusing. I never know what is what really.
+        Which brings me to jQuery.  I have heard about jQuery and thought it was some type of
+        program to run code for websites.  Yes jQuery is code for websites, but it is a JavaScript
+        library. What does that mean exactly? From wikipedia "A JavaScript library is a library
+        of pre-written JavaScript which allows for easier development of JavaScript-based applications,
+        especially for AJAX and other web-centric tecnologies"  That explains it right?  For me, it actually does
+        when you get down to implementing it into a system.  JQuery is pretty cool and makes JavaScript
+        much more interesting and neat.  This how to guide will explore some aspects of jQuery. </p>
+        <p>Let's start at the beginning and talk about how to implement jQuery in your JavaScript code.  JQuery
+        doesn't need to be downloaded it can, but isn't necessary.  All that is needed is to use jQuery with a CDN,
+        which stands for content delivery network.  This network hosts jQuery on servers across the world.  This allows
+        little re-downloading because the information is accessable anywhere.</p>
+        <p>How this is done is very simple.  In your HTML reference the file using a script tag and paste into the header tag.</p>
+
+        <!-- HTML generated using hilite.me -->
+        <div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+          <pre style="margin: 0; line-height: 125%">
+             &lt;script src=<span style="color: #0000FF">&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js&quot;</span>&gt;&lt;<span style="color: #a61717; background-color: #e3d2d2">/script&gt;</span>
+             </pre></div>
+
+
+        <p>After referencing jQuery using a CDN it is now possible to get started coding.  With jQuery we are going to
+        to make the webpage now perform some magic.</p>
+        <p>JQuery has a basic syntax, it uses a document ready function.  When the webpage loads the code in this function does also.
+        Instead of after the page has rendered, which happens with JavaScript. Example of the basic syntax can be found below.</p>
+
+        <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">$(document).ready(<span style="color: #000080; font-weight: bold">function</span>()
+          {
+          <span style="color: #008800; font-style: italic">//code goes here</span>
+          });
+          </pre></div>
+          <script type="text/Javascript">
+$((document).ready(function(){
+  $(.'block').affix();
+});
+</script>
+
+    </div>
+    <nav>
+      <ul class="pager">
+        <li><a href="how1.html">Click Buttom</a></li>
+      </ul>
+    </nav>
+  </div>
+
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+</body>
+</html>

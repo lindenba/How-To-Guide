@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title> jQuery 1</title>
+  <meta name="description" content="What goes here not sure">
+
+      <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script type="text/Javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+      <!-- Optional theme -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+<style type="text/css">
+  .header{
+    margin:20px;
+  }
+  .body{
+    margin:20px;
+  }
+  .code{
+    background:hsl(220,80%,90%);
+  };
+  .pre{
+    white-space:pre-wrap;
+    background:hsl(30,80%,90%);
+}
+.body{
+  font-size:18px;
+  line-height:1.5;
+  margin-right: 5%;
+}
+.menu{
+  float:right;
+  padding:25px;
+  display: inline-block;
+}
+
+  </style>
+
+</head>
+
+<body>
+
+    <div class="header">
+      <div class="page-header">
+        <h1>Selectors of jQuery<small></small><h1>
+    </div>
+  </div>
+  <div class ="container">
+  <div class="body-header">
+  </div>
+</div>
+<div class='menu'>
+  <ul>
+    <li class="active"><a href="how-to.html"><span>Home</span></a></li>
+    <li><a href="how1.html">Effects</a></li>
+    <li><a href="how2.html">Selectors</a></li>
+    <li><a href="how3.html">Fake API</a></li>
+    <li class='last'><a href="how4.html"><span>AJAX</span></a></li>
+  </ul>
+</div>
+<div class="row">
+    <div class="col-sm-8 blog-main">
+      <div class="body">
+        <p>Selectors in jQuery allow you to manipulate HTML elements by selection.  Basically what the term means to select items.
+        The selectors are used to select HTML elements by there id, class, type, attributes, and so on.  There are a ton of ways
+        to manipulate those elements. </p>
+        <p>The code below will specifically select all odd valued items.  Any 'p' element that is odd will get a background of pink.  Can also select anything greater
+          than a certain number such as anything greater than 3 will be pink.  Instead of 'p:odd' it can be 'p:gt(3)' and if you wanted to look at
+          a specific value equal to some number this can be used 'p:eq(1)'.  For the same code below you can use the element methods I went through in the Elements section.
+          For example use .hide() or .fadeOut() which is another effects method.</p>
+                  <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">&lt;script type=<span style="color: #0000FF">&quot;text/Javascript&quot;</span>&gt;
+$(document).ready(<span style="color: #000080; font-weight: bold">function</span>()
+{
+  $(<span style="color: #0000FF">&#39;p:odd&#39;</span>).css(<span style="color: #0000FF">&quot;background-color&quot;</span>, <span style="color: #0000FF">&quot;pink&quot;</span>);
+});
+&lt;<span style="color: #a61717; background-color: #e3d2d2">/script&gt;</span>
+&lt;p <span style="color: #000080; font-weight: bold">class</span>=<span style="color: #0000FF">&quot;a&quot;</span>&gt;item <span style="color: #0000FF">1</span>&lt;<span style="color: #a61717; background-color: #e3d2d2">/p&gt;</span>
+&lt;p id=<span style="color: #0000FF">&quot;b&quot;</span>&gt;item <span style="color: #0000FF">2</span>&lt;<span style="color: #a61717; background-color: #e3d2d2">/p&gt;</span>
+&lt;p id=<span style="color: #0000FF">&quot;c&quot;</span>&gt;item <span style="color: #0000FF">3</span>&lt;<span style="color: #a61717; background-color: #e3d2d2">/p&gt;</span>
+&lt;p&gt;item <span style="color: #0000FF">4</span>&lt;<span style="color: #a61717; background-color: #e3d2d2">/p&gt;</span>
+&lt;p&gt;item <span style="color: #0000FF">5</span>&lt;<span style="color: #a61717; background-color: #e3d2d2">/p&gt;</span>
+&lt;p&gt;item <span style="color: #0000FF">6</span>&lt;<span style="color: #a61717; background-color: #e3d2d2">/p&gt;</span>
+</pre></div>
+
+
+        <p>More examples of HTML elements being manipulated. In this code below any element that has 'some words' will
+        slowly disappear.  With the .append will add 'and more words' will be added to what has been defined.  I also
+        had commented out .css, which would have changed the colors of all that had 'some words' defined.</p>
+        <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">$(document).ready(<span style="color: #000080; font-weight: bold">function</span>()
+        {
+          <span style="color: #000080; font-weight: bold">var</span> $word=$(<span style="color: #0000FF">&quot;p:contains(&#39;some words&#39;)&quot;</span>);<span style="color: #008800; font-style: italic">//.css(&quot;color&quot;, &quot;yellow&quot;);</span>
+        <span style="color: #008800; font-style: italic">//  $word.hide();</span>
+        $word.each(verb);
+        <span style="color: #000080; font-weight: bold">function</span> verb()
+        {
+          $(<span style="color: #000080; font-weight: bold">this</span>).toggle(<span style="color: #0000FF">&quot;slow&quot;</span>);
+          $(<span style="color: #000080; font-weight: bold">this</span>).append(<span style="color: #0000FF">&quot; and more words&quot;</span>);
+        }
+        });
+        &lt;<span style="color: #a61717; background-color: #e3d2d2">/script&gt;</span>
+        &lt;p <span style="color: #000080; font-weight: bold">class</span>=<span style="color: #0000FF">&quot;a&quot;</span>&gt;item <span style="color: #0000FF">1</span> some words&lt;<span style="color: #a61717; background-color: #e3d2d2">/p&gt;</span>
+        &lt;p id=<span style="color: #0000FF">&quot;b&quot;</span>&gt;item <span style="color: #0000FF">2</span> some words&lt;<span style="color: #a61717; background-color: #e3d2d2">/p&gt;</span>
+        &lt;p id=<span style="color: #0000FF">&quot;c&quot;</span>&gt;item <span style="color: #0000FF">3</span>&lt;<span style="color: #a61717; background-color: #e3d2d2">/p&gt;</span>
+        &lt;p&gt;item <span style="color: #0000FF">4</span>&lt;<span style="color: #a61717; background-color: #e3d2d2">/p&gt;</span>
+        &lt;p&gt;item <span style="color: #0000FF">5</span> some words&lt;<span style="color: #a61717; background-color: #e3d2d2">/p&gt;</span>
+        &lt;p&gt;item <span style="color: #0000FF">6</span>&lt;<span style="color: #a61717; background-color: #e3d2d2">/p&gt;</span>
+        </pre></div>
+
+
+
+      </div>
+    <nav>
+      <ul class="pager">
+        <li><a href="how1.html">Prev</a></li>
+        <li><a href="how3.html">Next</a></li>
+      </ul>
+    </nav>
+  </div>
+  </div>
+
+
+
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+</body>
+</html>

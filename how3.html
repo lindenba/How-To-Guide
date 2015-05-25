@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Display Google Map with jQuery</title>
+  <meta name="description" content="What goes here not sure">
+
+  <!-- Latest compiled and minified CSS -->
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<script type="text/Javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+<style type="text/css">
+.header{
+margin:20px;
+}
+.body{
+margin:20px;
+}
+.code{
+background:hsl(220,80%,90%);
+};
+.pre{
+white-space:pre-wrap;
+background:hsl(30,80%,90%);
+}
+.body{
+font-size:18px;
+line-height:1.5;
+margin-right: 5%;
+}
+.menu{
+float:right;
+padding:25px;
+display: inline-block;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+  <div class="page-header">
+    <h1>Display Google Map with jQuery<small></small><h1>
+</div>
+</div>
+<div class ="container">
+<div class="body-header">
+</div>
+</div>
+<div class='menu'>
+<ul>
+  <li class="active"><a href="how-to.html"><span>Home</span></a></li>
+  <li><a href="how1.html">Effects</a></li>
+  <li><a href="how2.html">Selectors</a></li>
+  <li><a href="how3.html">Fake API</a></li>
+  <li class='last'><a href="how4.html"><span>AJAX</span></a></li>
+</ul>
+</div>
+<div class="row">
+<div class="col-sm-8 blog-main">
+  <div class="body">
+    <p>I have shown a few things that jQuery can do that is interesting.  My next trick is to show how to display
+      Google Maps on your webpage.  There isn't much code to be used.  Google Maps API is just a source request
+      defined with script.  Similar to the jQuery request.
+
+
+      <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">&lt;script &gt;
+      $(document).ready(<span style="color: #000080; font-weight: bold">function</span>()
+      {
+        <span style="color: #000080; font-weight: bold">var</span> map;
+      <span style="color: #000080; font-weight: bold">var</span> coordinates = <span style="color: #000080; font-weight: bold">new</span> google.maps.LatLng( <span style="color: #0000FF">45.5200</span>, -<span style="color: #0000FF">122.6819</span>);	<span style="color: #008800; font-style: italic">// Coordinates of portland, or</span>
+
+
+      <span style="color: #000080; font-weight: bold">var</span> mapOptions = { zoom: <span style="color: #0000FF">8</span>, center: coordinates  };
+
+
+      map = <span style="color: #000080; font-weight: bold">new</span> google.maps.Map( document.getElementById(<span style="color: #0000FF">&#39;map&#39;</span>), mapOptions );
+      });
+
+      &lt;<span style="color: #a61717; background-color: #e3d2d2">/script&gt;</span>
+      &lt;style&gt;
+
+      <span style="color: #a61717; background-color: #e3d2d2">#</span>map
+      {
+      width : <span style="color: #0000FF">200</span>px; 	<span style="color: #008800; font-style: italic">/* map width */</span>
+      height: <span style="color: #0000FF">200</span>px;	<span style="color: #008800; font-style: italic">/* map height */</span>
+      }
+      &lt;<span style="color: #a61717; background-color: #e3d2d2">/style&gt;</span>
+      &lt;<span style="color: #a61717; background-color: #e3d2d2">/head&gt;</span>
+
+      &lt;body&gt;
+        &lt;h2&gt;Google Map&lt;<span style="color: #a61717; background-color: #e3d2d2">/h2&gt;</span>
+      &lt;div id=<span style="color: #0000FF">&#39;map&#39;</span>&gt;
+      &lt;<span style="color: #a61717; background-color: #e3d2d2">/div&gt;</span>
+      </pre></div>
+
+      <p>To add the google maps API request to get the image to load on your page. Just this url request that can go at the top of your HTML code.
+      In the same place that you would request the jQuery.</p>
+      <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">&lt;script src=<span style="color: #0000FF">&quot;https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false&quot;</span>&gt;&lt;<span style="color: #a61717; background-color: #e3d2d2">/script&gt;</span>
+      </pre></div>
+
+      <script type="text/Javascript">
+      $(document).ready(function()
+      {
+        var map;
+
+      var coordinates = new google.maps.LatLng( 45.5200, -122.6819);	// Coordinates of portland, or
+
+      var mapOptions = { zoom: 8, center: coordinates  };
+
+
+      map = new google.maps.Map( document.getElementById('map'), mapOptions );
+      });
+
+      </script>
+      <style>
+
+      #map
+      {
+      width : 200px; 	/* map width */
+      height: 200px;	/* map height */
+      }
+      </style>
+      </head>
+
+      <body>
+        <h2>Google Map</h2>
+      <div id='map'>
+      </div>
+    </div>
+
+    <nav>
+      <ul class="pager">
+        <li><a href="how2.html">Prev</a></li>
+        <li><a href="how4.html">Next</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  </div>
+
+
+
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+</body>
+</html>
